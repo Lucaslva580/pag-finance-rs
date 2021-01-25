@@ -223,6 +223,8 @@ table thead tr td:last-child {
 
         opacity:0;
         visibility:hidden;
+
+        z-index: 1;
     }
 
     .modal-overlay.active {
@@ -233,6 +235,8 @@ table thead tr td:last-child {
     .modal {
         background: #F0F2f5;
         padding: 2.4rem;
+        position: relative;
+        z-index: 1;
     }
 
 /* Modal =======================*/
