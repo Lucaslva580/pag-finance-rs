@@ -3,7 +3,7 @@ const Modal = {
         //abrir modal
         //adicionar class active ao modal
         document
-        .querySelector('.modal-overlay')
+        .getElementById('modal-overlay')
         .classList
         .add('active');
         
@@ -12,9 +12,40 @@ const Modal = {
         //fechar Modal
         //remover class active do modal
         document
-        .querySelector('.modal-overlay')
+        .getElementById('modal-overlay')
         .classList
         .remove('active');
+    }
+}
+
+const ModalErro = {
+    open(error) {
+        //abrir modal
+        //adicionar class active ao modal
+        document
+        .getElementById('modal-overlay-error')
+        .classList
+        .add('active');
+
+        document
+        .getElementById('modal-overlay-message')
+        .innerHTML = error.message
+
+
+        
+    },
+    close() {
+        //fechar Modal
+        //remover class active do modal
+        document
+        .getElementById('modal-overlay-error')
+        .classList
+        .remove('active');
+    }
+}
+
+const message = {
+    open () {
     }
 }
 
@@ -201,7 +232,7 @@ const Form = {
             Form.clearFields()
             Modal.close()
         }catch(error){
-            alert(error.message)
+            ModalErro.open(error)
         }
 
 
